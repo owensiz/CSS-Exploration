@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css居中</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+<!-- 水平居中-1  margin: 0 auto;-->
+	<section id="horizon1">
+		<div id="box1">
+			<img id="img1" src="https://i0.hdslb.com/bfs/bangumi/a03037cfb87de39de33d423e090cc890d7e56429.jpg@108w_108h.webp" alt="" />
+		</div>
+		<style>
+			#box1{
+				width: 300px;
+				height: 300px;
+				background: pink;
+			}
+			#img1{
+				display: block;/*！！！！*/
+				margin: 0 auto;/*！！！！*/
+			}
+		</style>
+	</section>
+
+<!-- 水平居中-2 text-align: center;-->
+	<section id="horizon2">
+		<div id="box2">
+			<img id="img2" src="https://i0.hdslb.com/bfs/bangumi/2d9edd0943ee32ee62086e69f168883de0882b6f.jpg@108w_108h.webp" alt="" />
+		</div>
+		<style>
+			#box2{
+				width: 300px;
+				height: 300px;
+				background: yellow;
+				text-align: center;/*！！！！*/
+			}
+			#img2{
+				display: inline-block;/*！！！！*/
+			}
+		</style>
+	</section>
+
+
+
+<!-- 水平垂直居中-1  绝对定位+margin-->
+	<section id="horizon3">
+		<div id="box3">
+			<img id="img3" src="https://i0.hdslb.com/bfs/bangumi/c90f5653ac1577f2fb5f49e82897bb5754f3c1d3.jpg@108w_108h.webp" alt="" />
+		</div>
+		<style>
+			#box3{
+				width: 300px;
+				height: 300px;
+				background: red;
+				position: relative;
+			}
+			#img3{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -50px;
+				margin-left: -50px;
+			}
+		</style>
+	</section>
+
+
+<!-- 水平垂直居中-2  绝对定位+margin2-->
+	<section id="horizon4">
+		<div id="box4">
+			<img id="img4" src="https://i0.hdslb.com/bfs/bangumi/1d703634cd3ee35b625bf882f27289db301cae63.jpg@108w_108h.webp" alt="" />
+		</div>
+		<style>
+			#box4{
+				width: 300px;
+				height: 300px;
+				background: green;
+				position: relative;
+			}
+			#img4{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+		</style>
+	</section>
+
+
+
+
+<!-- 水平垂直居中-3  绝对定位+transform 对不知道宽高的元素也好用-->
+	<section id="horizon5">
+		<div id="box5">
+			<img id="img5" src="https://i0.hdslb.com/bfs/bangumi/5be761676538b110718a88bffc932610ca96e3f9.jpg@108w_108h.webp" alt="" />
+		</div>
+		<style>
+			#box5{
+				width: 300px;
+				height: 300px;
+				background: purple;
+				position: relative;
+			}
+			#img5{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+		</style>
+	</section>
+
+
+<!-- 水平垂直居中-4  display: table-cell;-->
+	<section id="horizon6">
+		<div id="box6">
+			<img id="img6" src="https://i0.hdslb.com/bfs/bangumi/5be761676538b110718a88bffc932610ca96e3f9.jpg@108w_108h.webp" alt="" />
+		</div>
+		<style>
+			#box6{
+				width: 300px;
+				height: 300px;
+				background: blue;
+				display: table-cell;
+				text-align: center;
+				vertical-align: middle;
+			}
+			#img6{
+				width: 100px;
+				height: 100px;
+
+			}
+		</style>
+	</section>
+
+<!-- 水平垂直居中-5  display: flex;-->
+	<section id="horizon7">
+		<div id="box7">
+			<img id="img7" src="https://i0.hdslb.com/bfs/bangumi/5be761676538b110718a88bffc932610ca96e3f9.jpg@108w_108h.webp" alt="" />
+		</div>
+		<style>
+			#box7{
+				width: 300px;
+				height: 300px;
+				background: black;
+				display: flex;
+				justify-content: center;
+				-ms-align-items: center;
+				align-items: center;
+			}
+			#img7{
+				width: 100px;
+				height: 100px;
+
+			}
+		</style>
+	</section>
+</body>
+</html>
