@@ -1,8 +1,8 @@
 <!--
- * @Description: 使用bg-position扩展语法来实现背景定位
+ * @Description: 使用bg-position扩展语法（添加偏移量）来实现背景定位
  * @Author: owensiz
  * @Date: 2019-08-17 16:42:32
- * @LastEditTime: 2019-08-20 10:08:59
+ * @LastEditTime: 2019-08-20 12:48:38
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +20,13 @@
       white-space: pre;
     }
     .content {
+      color: #fff;
       height: 300px;
       width: 300px;
       border: 1px solid #000;
       margin: 0 auto;
-      background: palegoldenrod url('https://avatars1.githubusercontent.com/u/39058211?s=460&v=4') 100% 100% no-repeat;
+      background: yellowgreen url('./static/images/avatar.png') no-repeat;
+      background-size: 100% 100%;
       background-position: bottom 20px right 20px;
     }
   </style>
@@ -32,7 +34,9 @@
 
 <body>
   <div class="explain">
-
+    bg-position扩展语法
+    Edge offsets values
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position">mdn-link</a>
   </div>
   <div class="content">
     自律更自由

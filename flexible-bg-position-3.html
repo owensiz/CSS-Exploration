@@ -1,11 +1,12 @@
 <!--
- * @Description: 使用bg-origin来实现背景定位
+ * @Description: 使用bg-position + calc()来实现背景定位
  * @Author: owensiz
  * @Date: 2019-08-17 17:24:47
- * @LastEditTime: 2019-08-20 12:50:07
+ * @LastEditTime: 2019-08-20 12:58:08
  -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +20,18 @@
       line-height: 28px;
       white-space: pre;
     }
+
     .content {
       color: #fff;
       height: 300px;
       width: 300px;
-      padding: 0 20px 20px 0;
+      /* padding: 0 20px 20px 0; */
       background-image: url('./static/images/avatar.png');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-color: yellowgreen;
       background-origin: content-box;
+      background-position: calc(100% - 20px) calc(100% - 20px);
       border: 1px solid #000;
     }
   </style>
@@ -36,8 +39,9 @@
 
 <body>
   <div class="explain">
-    使用bg-origin
-    可以实现效果，缺点是不够DRY
+    使用bg-position + calc()来实现背景定位
+    background-position: calc(100% - 20px) calc(100% - 20px);
+    运算符与length之间一定要加空格，否则不识别
   </div>
   <div class="content">
     自律更自由
