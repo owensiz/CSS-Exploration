@@ -1,0 +1,47 @@
+<!--
+ * @Description: 使用outline实现双重边框
+ * @Author: owensiz
+ * @Date: 2019-08-17 16:21:28
+ * @LastEditTime: 2019-08-31 16:56:37
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+      white-space: pre;
+    }
+    .content {
+      padding: 30px;
+      margin: 0 auto;
+      max-width: 300px;
+      background-color: plum;
+      border: 10px solid yellowgreen;
+      outline: 2px dashed #eee;
+      outline-offset: -15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="explain">
+    outline属性值为：outline-color, outline-style, outline-width。
+    属性顺序类似于border。1px solid #000
+    outline-style的下列值：none solid dashed dotted double groove ridge inset outset inherit
+    从border外侧开始outline。
+    还可以使用outline-offset来调整，产生“缝边”效果。
+
+    适合双重边框。支持虚线。
+  </div>
+  <div class="content">
+    测试文字 testText
+  </div>
+</body>
+</html>

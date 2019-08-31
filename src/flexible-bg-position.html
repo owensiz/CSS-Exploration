@@ -1,0 +1,46 @@
+<!--
+ * @Description: 使用bg-position扩展语法（添加偏移量）来实现背景定位
+ * @Author: owensiz
+ * @Date: 2019-08-17 16:42:32
+ * @LastEditTime: 2019-08-20 12:48:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+      white-space: pre;
+    }
+    .content {
+      color: #fff;
+      height: 300px;
+      width: 300px;
+      border: 1px solid #000;
+      margin: 0 auto;
+      background: yellowgreen url('../static/images/avatar.png') no-repeat;
+      background-size: 100% 100%;
+      background-position: bottom 20px right 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="explain">
+    bg-position扩展语法
+    Edge offsets values
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position">mdn-link</a>
+  </div>
+  <div class="content">
+    测试文字 testText
+  </div>
+</body>
+
+</html>

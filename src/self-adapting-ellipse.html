@@ -1,0 +1,104 @@
+<!--
+ * @Description: content
+ * @Author: owensiz
+ * @Date: 2019-08-26 10:46:10
+ * @LastEditTime: 2019-08-26 10:46:10
+ -->
+<!--
+ * @Description: 自适应的椭圆，半椭圆的画法。border-radius详解。
+ * @Author: owensiz
+ * @Date: 2019-08-26 10:46:10
+ * @LastEditTime: 2019-08-31 16:54:33
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      margin-bottom: 10px;
+    }
+
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+      white-space: pre;
+    }
+
+    .content1 {
+      width: 100px;
+      height: 100px;
+      background-color: tan;
+      border-radius: 50px;
+    }
+
+    .content2 {
+      width: 100px;
+      height: 100px;
+      background-color: tan;
+      border-radius: 0 50px;
+    }
+
+    .content3 {
+      width: 40%;
+      background-color: tan;
+      border-radius: 50% / 50%;
+      /* border-radius: 50%; */
+      /* 简写形式 */
+    }
+    .content4 {
+      width: 100px;
+      height: 100px;
+      background-color: tan;
+      /* 需要根据图形分析一下的 */
+      border-radius: 50% / 100% 100% 0 0; 
+    }
+    .content5 {
+      width: 100px;
+      height: 100px;
+      background-color: tan;
+      border-radius: 0 100% 100% 0 / 50%;
+    }
+    .content6 {
+      width: 100px;
+      height: 50px;
+      background-color: tan;
+      border-radius: 0 100% 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="explain">
+    border-radius可以使得一个正方形变成一个正圆， >=边长的一半即可，这里>是可以的
+    border-radius的语法有点好玩。
+    可以结合
+    <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius">mdn</a>和<a
+      href="https://www.cnblogs.com/happymental/p/7891725.html">这篇博客来看</a>，就非常清晰了。
+    border-radius的语法完全扩展形式：border-radius: 1-4 length|% / 1-4 length|%;
+    也就是说，平时所写的border-radius : 50px，其实是border-radius : 50px 50px 50px 50px / 50px 50px 50px 50px;
+    斜杠分隔的是，水平半径和垂直半径。四个值的顺序为顺时针，如果有缺省，按对角线相等的原则。
+
+    border-radius 圆角，它的工作并不需要border的参与，叫b-r的原因是因为圆角是从元素的border-box开始切割的。
+
+    在思考椭圆的形状时候，一个技巧是，先把它当做特殊情况：正圆来思考。
+
+    单词： ellipsis省略号，ellipse椭圆
+  </div>
+  <div class="content1">正圆</div>
+  <div class="content2">缺省值</div>
+  <div class="content3">自适应的椭圆，可以调整浏览器窗口大小来看看
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo sed in dicta deserunt aliquam. Quia ex, alias ab provident animi, earum dolorem officiis sit labore, atque optio ratione? Corporis, voluptas!</p>
+  </div>
+  <div class="content4">半椭圆</div>
+  <div class="content5">纵轴半椭圆</div>
+  <div class="content6">1/4椭圆</div>
+</body>
+
+</html>

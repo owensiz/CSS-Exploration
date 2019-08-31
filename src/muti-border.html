@@ -1,0 +1,44 @@
+<!--
+ * @Description: 使用box-shadow来实现多重边框
+ * @Author: owensiz
+ * @Date: 2019-08-17 16:00:29
+ * @LastEditTime: 2019-08-20 12:49:27
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+      white-space: pre;
+    }
+    .content {
+      padding: 30px;
+      max-width: 300px;
+      margin: 0 auto;
+      background:plum;
+      border-radius: 10px;
+      box-shadow: 0 0 0 10px yellowgreen, 0 0 0 20px plum, 10px 10px 5px 20px rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="explain">
+    box-shadow 的属性值： h-shadow, v-shadow, blur, spread, color, inset。其中h-shadow和v-shadow支持负值。
+    支持border-radius。调整box-shadow。
+    box-shadow具体使用，自己调试看看就知道。
+
+    此处使用第4个属性值spread来产生多重边框。
+    box-shadow支持逗号分割法，来完成任意数量的边框。
+    “假边框”，在布局和点击事件之类的地方需要注意。   
+  </div>
+  <div class="content">测试文字 testText</div>
+</body>
+</html>
