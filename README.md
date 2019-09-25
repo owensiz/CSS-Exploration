@@ -22,5 +22,6 @@
   - add 补充添加
   - construct 项目结构调整
   - doc 文档更新
+  - merge 合并冲突
 ```
 

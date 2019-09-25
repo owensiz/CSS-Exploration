@@ -1,0 +1,91 @@
+<!--
+ * @Description: flex 布局
+ * @Author: owensiz
+ * @Date: 2019-09-06 15:45:28
+ * @Refer: http://www.ruanyifeng.com/blog/2018/10/flexbox-form.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+      white-space: pre;
+    }
+
+    .demo {
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="explain">
+    flex-grow 默认为0，不拉伸；设为1，自动撑满宽度。
+
+    弹性布局默认不改变项目的宽度，但是它默认改变项目的高度。如果项目没有显式指定高度，就将占据容器的所有高度。
+
+    项目值：align-self属性可以取四个值。
+    flex-start：顶边对齐，高度不拉伸
+    flex-end：底边对齐，高度不拉伸
+    center：居中，高度不拉伸
+    stretch：默认值，高度自动拉伸
+
+    容器值：align-items可取的值同上
+  </div>
+
+
+  <div class="demo">
+    <form action="">
+      <input type="email" name="email">
+      <button type="submit">send</button>
+    </form>
+  </div>
+
+  <div class="demo">
+    <form action="" style="display: flex;">
+      <input type="email" name="email">
+      <button type="submit">send</button>
+    </form>
+  </div>
+
+  <div class="demo">
+    <form action="" style="display: flex;">
+      <input type="email" name="email" style="flex-grow: 1;">
+      <button type="submit">send</button>
+    </form>
+  </div>
+
+
+  <div class="demo">
+      <form action="" style="display: flex;">
+        <input type="email" name="email" style="flex-grow: 1;">
+        <button type="submit"><img src="../static/images/egg-small.png" alt=""></button>
+      </form>
+    </div>
+
+  <div class="demo">
+    <form action="" style="display: flex;">
+      <input type="email" name="email" style="flex-grow: 1;align-self: flex-end;">
+      <button type="submit"><img src="../static/images/egg-small.png" alt=""></button>
+    </form>
+  </div>
+
+  <div class="demo">
+      <form action="" style="display: flex; align-items: center;">
+        <input type="email" name="email" style="flex-grow: 1;align-self: flex-end;">
+        <button type="submit"><img src="../static/images/egg-small.png" alt=""></button>
+      </form>
+    </div>
+
+</body>
+
+</html>
