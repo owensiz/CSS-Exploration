@@ -1,0 +1,222 @@
+<!--
+ * @Description: 水平居中 垂直居中 垂直水平居中
+ * @Author: owensiz
+ * @Date: 2019-09-25 17:54:21
+ -->
+ <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style lang="">
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+      white-space: pre;
+    }
+    .wrapper {
+      width: 200px;
+      height: 200px;
+      background-color: teal;
+      margin-bottom: 10px;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="explain">
+    1. 垂直居中 水平居中：
+      行内元素：
+        行高和height写一致
+        vertical-align: middle
+        text-align: center
+      块级元素：
+        定宽，margin：auto
+
+    2. 通用方法
+        绝对定位50% + 负一半margin
+        绝对定位0 + margin:auto
+        绝对定位50% + translate负50%
+        绝对定位 + calc(50%减掉一半px)
+        flex布局 + flex属性
+        flex布局 + margin:auto
+
+        
+  </div>
+
+  <!-- 垂直水平居中 1: 绝对定位 + 负margin -->
+  <!-- 适用于定宽高div -->
+  <div class="wrapper">
+    <div class="content1"></div>
+    <style>
+      .content1 {
+        width: 100px;
+        height: 100px;
+        background-color: yellowgreen;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+      }
+    </style>
+  </div>
+
+  <!-- 垂直水平居中 2: 绝对定位 + calc() -->
+  <!-- 适用于定宽高div -->
+  <div class="wrapper">
+    <div class="content2"></div>
+    <style>
+      .content2 {
+        width: 100px;
+        height: 100px;
+        background-color: yellowgreen;
+        position: absolute;
+        left: calc(50% - 50px);
+        top: calc(50% - 50px);
+      }
+    </style>
+  </div>
+
+  <!-- 垂直水平居中 3，绝对定位 + translate -->
+  <!-- 可适用于不定宽高的div -->
+  <div class="wrapper">
+    <div class="content3">3lorem</div>
+    <style>
+      .content3 {
+        background-color: yellowgreen;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </div>
+
+  <!-- 垂直水平居中 4，绝对定位 + margin: auto -->
+  <!-- 仅适用于定宽高的div -->
+  <div class="wrapper">
+    <div class="content11">11</div>
+    <style>
+      .content11 {
+        background-color: yellowgreen;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50px;
+        height: 20px;
+        margin: auto;
+      }
+    </style>
+  </div>
+
+  <!-- div的垂直水平居中 5，flex + margin: auto -->
+  <!-- 可适用于不定宽高的div -->
+  <div class="wrapper" style="display: flex;">
+    <div class="content4">4Loremipsumdolorsitam</div>
+    <style>
+      .content4 {
+        background-color: yellowgreen;
+        margin: auto;
+      }
+    </style>
+  </div>
+
+  <!-- div的垂直水平居中 6，flex + align-self -->
+  <!-- 可适用于不定宽高的div -->
+  <div class="wrapper" style="display: flex;justify-content: center;">
+    <div class="content5">5Loremipsumdolorsitam</div>
+    <style>
+      .content5 {
+        background-color: yellowgreen;
+        align-self: center;
+      }
+    </style>
+  </div>
+
+  <!-- 不常用，仅列出。可适用于不定宽高的div的垂直水平居中 7，margin + transform + BFC -->
+  <div class="wrapper" style="overflow: hidden;">
+    <!-- BFC，否则外边距合并 -->
+    <div class="content6">6Loremipsumdolorsitam</div>
+    <style>
+      .content6 {
+        background-color: yellowgreen;
+        margin: 50% auto 0;
+        width: 100px;
+        /* 无论是绝对定位/flex布局，都脱离正常文档流。正常流会继承父元素width，也就是width：100%；而不是靠内容撑起来的 */
+        word-break: break-all;
+        transform: translateY(-50%);
+      }
+    </style>
+  </div>
+
+  <!-- <div class="content7">Loremipsumdolorsitam</div> -->
+  <!-- <style>
+    .content7 {
+      background-color: yellowgreen;
+      margin: 50vh auto 0;
+      width: 100px;
+      word-break: break-all;
+      transform: translateY(-50%);
+    }
+  </style> -->
+
+  <div class="wrapper wrapper8">
+    <div class="content8">8Loremipsumdolorsitam</div>
+    <style lang="">
+      .wrapper8 {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        background-color: lightgray;
+      }
+
+      .content8 {
+        background-color: yellowgreen;
+        /* display: inline-block; */
+        /* display: table-cell; */
+      }
+    </style>
+  </div>
+
+  <!-- 行内元素的水平居中 -->
+  <div class="wrapper wrapper9">
+    <div class="content9">
+      9Loremipsumdolorsitam
+    </div>
+    <style>
+      .wrapper9 {
+        text-align: center;
+      }
+
+      .content9 {
+        display: inline-block;
+        height: 200px;
+        line-height: 200px;
+      }
+    </style>
+  </div>
+
+  <!-- 定宽块级元素的水平居中 -->
+  <div class="wrapper">
+    <div class="content10">10Loremipsumdolorsitam</div>
+    <style>
+      .content10 {
+        width: 100px;
+        overflow: hidden;
+        background-color: yellowgreen;
+        margin: 0 auto;
+      }
+    </style>
+  </div>
+
+</body>
+
+</html>
