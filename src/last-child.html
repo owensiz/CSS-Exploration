@@ -1,0 +1,78 @@
+<!--
+ * @Description: 去掉最后一个列表项的外边距
+ * @Author: owensiz
+ * @Date: 2019-10-08 11:29:25
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      height: 200px;
+      background-color: tan;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      overflow: scroll;
+    }
+
+    .item {
+      height: 100px;
+      width: 100px;
+      background-color: plum;
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    .item:last-child {
+      margin-right: 0;
+    }
+
+    /* 顺便写一下其他类似选择器，refer: https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-child
+    :first-child， 表示在一组兄弟元素中的第一个元素。
+    :last-child
+    :nth-child()
+    :nth-last-child()
+
+    与之对应的，refer: https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-child
+    :first-of-type， 表示一组兄弟元素中其类型的第一个元素。
+    :last-of-type
+    :nth-of-type()
+    :nth-last-of-type() */
+
+    .item:first-child {
+      background-color: darkgreen;
+    }
+
+    .item:nth-child(2) {
+      background-color: darkred;
+    }
+
+    .item:nth-last-child(2) {
+      background-color: darkred;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+  </div>
+
+</body>
+
+</html>

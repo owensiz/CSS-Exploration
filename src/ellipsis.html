@@ -1,0 +1,52 @@
+<!--
+ * @Description: 一行省略 多行省略(可自定义行数)
+ * @Author: owensiz
+ * @Date: 2019-10-08 11:08:21
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    .ellipsis-1-line {
+      /* 先让它不折行，然后写溢出显示方式，再写文本溢出显示方式 */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+    }
+
+    .ellipsis-muti-line {
+      /* 使用WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端 */
+      display: -webkit-box;
+      /* 将对象作为弹性伸缩盒子模型显示 */
+      -webkit-box-orient: vertical;
+      /* 设置或检索伸缩盒对象的子元素的排列方式 */
+      -webkit-line-clamp: 3;
+      /* -webkit-line-clamp用来限制在一个块元素显示的文本的行数。  */
+      overflow: hidden;
+      max-height: 60px;
+      /* 使用多行省略会出现比实际高度小1px的问题，用max-height来限制高度从而解决布局混乱问题。 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ellipsis-1-line">
+    这是一行省略这是一行省略这是一行省略这是一行省略这是一行省略这是一行省略
+  </div>
+  <div class="ellipsis-muti-line" style="font-size: 20px;">
+    这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略这是三行省略
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!--
+ * @Description: 内联盒子的baseline + 对齐方式 + vertical-align
+ * @Author: owensiz
+ * @Date: 2019-10-08 19:30:12
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      background-color: lightslategray;
+      white-space: nowrap;
+      overflow: scroll;
+      margin-bottom: 10px;
+    }
+
+    .item {
+      height: 100px;
+      width: 100px;
+      background-color: lightsteelblue;
+      margin-right: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="explain" style="white-space: pre;">
+    1. vertical-align 表示内联元素/表格单元格在行盒中的垂直对齐方式。默认为baseline。
+    2. 对于一个inline-block元素，如果为空或者overflow不为visiable(默认值)，它的baseline为margin底缘。否则它的baseline为其内部元素的最后一行的baseline。
+    3. vertical-align的各类属性值为：
+
+    相对父元素的值： 
+      线类，如 baseline、middle
+        baseline为默认值, 使元素的基线与父元素的基线对齐。
+        middle：使元素的中部与父元素的基线加上父元素x-height（译注：x高度）的一半对齐。
+      文本类，如 text-top、text-bottom；使元素的顶部与父元素的字体顶部对齐。使元素的底部与父元素的字体底部对齐。
+      上标下标类，如 sub、super；使元素的基线与父元素的下标基线对齐。使元素的基线与父元素的上标基线对齐。
+      数值百分比类，如 10px、1em、5%；
+    相对行的值:
+      线类，top、bottom；
+      使元素及其后代元素的顶部与整行的顶部对齐。
+      使元素及其后代元素的底部与整行的底部对齐。
+      
+    4. 3的注意点：注意是哪一条线与哪一条线对齐。是父元素/整行的上缘、下缘还是baseline，baseline具体是指哪一条线，有什么具体情况
+  </div>
+
+  <div class="wrapper">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item" style="overflow: auto;">1</div>
+    <div class="item"></div>
+    <div class="item">last</div>
+  </div>
+
+  <div class="wrapper">
+    x
+    <view class="item" style="vertical-align:baseline;">baseline</view>
+    <view class="item" style="vertical-align:baseline;"></view>
+    <view class="item" style="vertical-align:baseline; white-space: normal;">Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Porro autem obcaecati a libero sint beatae voluptas eius distinctio, provident error ex saepe
+      quibusdam, rem architecto et, similique dolores optio earum?</view>
+    <view class="item" style="vertical-align:top;">top</view>
+    <view class="item" style="vertical-align:middle;">middle</view>
+    <view class="item" style="vertical-align:bottom;">bottom</view>
+    gxlf
+    <view class="item" style="vertical-align:text-top;">text-top</view>
+    lxg
+    <view class="item" style="vertical-align:text-bottom;">text-bottom</view>
+  </div>
+
+</body>
+
+</html>
