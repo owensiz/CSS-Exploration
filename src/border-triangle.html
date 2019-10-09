@@ -1,0 +1,112 @@
+<!--
+ * @Description: 用border写三角形
+ * @Author: owensiz
+ * @Date: 2019-10-08 14:58:37
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      margin-bottom: 20px;
+
+    }
+
+    /* -----origin-triangle----- */
+    .origin-triangle {
+      /* 原理：写一个宽高为0，用border-width撑起来的div */
+      width: 0;
+      height: 0;
+      border-width: 30px;
+      border-color: lightblue lightcyan lightpink lightsalmon;
+      border-style: solid;
+    }
+
+    .new-triangle {
+      border-color: #000 transparent transparent transparent;
+    }
+
+    .new-rotate-triangle {
+      transform: translate(-30px, -30px) rotate(135deg);
+    }
+
+    /* -----origin-triangle2----- */
+    .origin-triangle2 {
+      /* 原理：仍是写一个宽高为0，用border-width撑起来的div，只不过此处border-width不全等 */
+      width: 0;
+      height: 0;
+      border-width: 20px 30px;
+      border-color: lightblue lightcyan lightpink lightsalmon;
+      border-style: solid;
+    }
+
+    .new-triangle2 {
+      border-color: #000 transparent transparent transparent;
+    }
+
+    /* -----origin-triangle3----- */
+    .origin-triangle3 {
+      /* 原理：仍是写一个宽高为0，用border-width撑起来的div，只不过此处border-width不全等 */
+      width: 0;
+      height: 0;
+      /* 啊我数学也太差了，算了半天 */
+      border-width: 22px;
+      border-color: lightblue transparent transparent lightcyan;
+      border-style: solid;
+    }
+
+    .new-triangle3 {
+      border-color: #000 transparent transparent #000;
+    }
+
+    .new-radius-triangle3 {
+      border-top-left-radius: 10px;
+    }
+
+
+    .triangle {
+      width: 100px;
+      height: 100px;
+      box-shadow: -3px 3px 1px 1px rgba(0, 0, 0, 0.1);
+      /* 对于box-shadow，属性顺序依次为（inset）x轴和y轴偏移值，模糊和扩散半径，最后是颜色。 */
+      /* background-image: linear-gradient(45deg, transparent 50%, #000 50%);
+      background-size: 30px 30px;
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: 30px 30px; */
+      background: #fff linear-gradient(45deg, transparent 50%, #000 50%) no-repeat top right/30px 30px;
+      /* 对于bg属性的简写，在同一层中，顺序任意，除了bg-size要紧跟在bg-position之后，且以 / 分隔。 */
+      border-top-right-radius: 5px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 45°等腰三角形原理图 -->
+  <div class="origin-triangle"></div>
+  <!-- 变体 -->
+  <div class="origin-triangle new-triangle"></div>
+  <div class="origin-triangle new-triangle new-rotate-triangle"></div>
+  <hr>
+  <!-- 宽高不等的三角形原理图 -->
+  <div class="origin-triangle2"></div>
+  <div class="origin-triangle2 new-triangle2"></div>
+  <hr>
+  <!-- 直角三角形原理图 -->
+  <div class="origin-triangle3"></div>
+  <div class="origin-triangle3 new-triangle3"></div>
+  <div class="origin-triangle3 new-triangle3 new-radius-triangle3"></div>
+  <!-- 用C3属性linear-gridient画一个三角形 -->
+  <div class="triangle"></div>
+
+</body>
+
+
+</html>

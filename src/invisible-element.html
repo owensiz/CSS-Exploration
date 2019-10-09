@@ -1,0 +1,50 @@
+<!--
+ * @Description: 让元素不可见的方式
+ * @Author: owensiz
+ * @Date: 2019-10-08 17:10:29
+ * @detail: 从以下方面看：1.是否占据空间 2.是否可点击 3.是否触发重绘和回流 4.株连性：是否影响子孙后代。
+ * https://www.cnblogs.com/iceflorence/p/6625910.html
+ * 1.空间占据与可点击 （display:none不占据空间，visibility:hidden仍占据空间。前者不可点击，后者可点击）
+ * 2.回流与渲染 （display:none隐藏产生reflow和repaint(回流与重绘)，而visibility:hidden没有这个影响前端性能的问题。）
+ * 3.株连性（一旦父节点元素应用了display:none，父节点及其子孙节点元素全部不可见；
+ *          应用了visibility:hidden声明下的子孙元素不可见。如果子孙元素应用了visibility:visible，则可见。 ） 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: plum;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- display: none; 不占位，不可点击  -->
+  <div class="box" style="display: none;">lorem</div>
+  <!-- visibility: hidden; 占位，不可点击 -->
+  <div class="box" style="visibility: hidden;">lorem</div>
+  <!-- hidden 不占位，不可点击  -->
+  <div class="box" hidden>lorem</div>
+  <!-- opacity: 0;占位，可点击 -->
+  <div class="box" style="opacity: 0;">lorem</div>
+  <!-- ----------------其他方式---------------- -->
+  <!-- position: absolute;不占位，不可点击 -->
+  <div class="box" style="position: absolute;top:-10000px;">lorem</div>
+  <!-- position: relative;占位，不可点击 -->
+  <!-- ！！注意：虽然位置都改变了。relative 不脱离文档流，absolute 脱离文档流。 -->
+  <div class="box" style="position: relative;top:-10000px;">lorem</div>
+  <!-- chrome下占位，不可点击 -->
+  <div class="box" style="transform: scale(0)">lorem</div>
+  <!-- height: 0; 不占位，不可点击 -->
+  <div class="box" style="height: 0; overflow: hidden;">lorem</div>
+</body>
+
+</html>
