@@ -1,0 +1,57 @@
+<!--
+ * @Description: width: auto;和width: 100%;的区别
+ * @Author: owensiz
+ * @Date: 2019-10-09 15:45:30
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+      white-space: pre;
+    }
+    .box {
+      width: 400px;
+      border: 1px solid #000;
+    }
+    .item1 {
+      background-color: lightsalmon;
+      /* 不显式写width的时候就是auto */
+      width: auto; 
+      padding: 0 10px;
+      margin: 0 20px;
+      border: 10px solid lightpink;
+    }
+    .item2 {
+      background-color: lightgrey;
+      width: 100%;
+      padding: 0 10px;
+      margin: 0 20px;
+      border: 10px solid lightslategray;
+    }
+  </style>
+  <div class="box">
+    <section class="explain">
+      width: auto;
+        此时子元素content + padding + margin + border  = 父元素content width;
+        display为block的时候恰好撑满
+
+      width: 100%;
+        此时子元素content width = 父元素content width;
+        设置padding border margin时元素会溢出父盒子。
+    </section>
+    <div class="item1">item1-width: auto; </div>
+    <div class="item2">item2-width: 100%;</div>
+  </div>
+</body>
+</html>

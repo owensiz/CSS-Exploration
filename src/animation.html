@@ -1,0 +1,44 @@
+<!--
+ * @Description: 动画的最简格式 + animation + @keyframes
+ * @Author: owensiz
+ * @Date: 2019-10-09 17:01:08
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* @keyframes的格式中没有冒号和逗号（除了样式），只有花括号 */
+    @keyframes color-change {
+      from {
+        background-color: #fff;
+      }
+
+      to {
+        background-color: palevioletred;
+      }
+    }
+
+    .btn {
+      /* animation 属性用来指定一组或多组动画，每组之间用逗号相隔。
+        animation-name：对应于 @keyframes 定义的动画名称；
+        animation-duration：定义动画完成的时间，默认是 0，单位可以是秒或毫秒；
+        animation-timing-function：定义动画的速度曲线，默认是 ease，即低速开始，然后加快，最后变慢；
+        animation-delay：动画延迟时间，默认是 0，即立刻执行；
+        animaiton-iteration-count：播放次数，默认是 1，设置为 infinite 则循环播放；
+        animation-direction：动画是否在下一周期逆向播放，默认是 normal，即正常播放；
+        animation-fill-mode：规定动画时间之外的状态，设置为 forwards 可以在动画完成后，保留在最后一帧。 */
+      animation: color-change 1s ease-in infinite forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn">lorem</div>
+</body>
+
+</html>
