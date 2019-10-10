@@ -83,6 +83,64 @@
       /* 对于bg属性的简写，在同一层中，顺序任意，除了bg-size要紧跟在bg-position之后，且以 / 分隔。 */
       border-top-right-radius: 5px;
     }
+
+    /* -----origin-triangle4 直角三角形，直角在左上角，右上角----- */
+    .origin-triangle4 {
+      /* 原理：写一个宽高为0，用border-width撑起来的div，只留下两个border-width */
+      width: 0;
+      height: 0;
+      /* 只留下两个border-width */
+      border-top: 22px solid lightblue;
+      border-left: 22px solid lightcyan;
+    }
+
+    .L-triangle1 {
+      border-top-color: #000;
+      border-left-color: transparent;
+    }
+
+    .L-triangle2 {
+      width: 0;
+      height: 0;
+      border-top: 22px solid #000;
+      border-right: 22px solid transparent;
+    }
+
+
+    .bubble {
+      width: 200px;
+      height: 50px;
+      border: 5px solid #FFB5BF;
+      position: relative;
+    }
+
+    .common {
+      width: 0;
+      height: 0;
+      position: absolute;
+      /* 使用绝对定位 */
+      left: 50%;
+      transform: translate(-50%, 0);
+      /* 水平居中 */
+    }
+
+    .bubble-triangle {
+      /* 消除之前写的样式 */
+      margin-bottom: 0;
+      bottom: -20px;
+      border-top: 20px solid #FFB5BF;
+      border-right: 20px solid transparent;
+      border-left: 20px solid transparent;    
+    }
+
+    .cover {
+      /* 消除之前写的样式 */
+      margin-bottom: 0;
+      bottom: -13px;
+      border-top: 20px solid #fff;
+      border-right: 20px solid transparent;
+      border-left: 20px solid transparent;     
+    }
   </style>
 
 </head>
@@ -105,7 +163,17 @@
   <div class="origin-triangle3 new-triangle3 new-radius-triangle3"></div>
   <!-- 用C3属性linear-gridient画一个三角形 -->
   <div class="triangle"></div>
-
+  <hr>
+  <!-- 直角三角形原理图 -->
+  <div class="origin-triangle4"></div>
+  <div class="origin-triangle4 L-triangle1"></div>
+  <div class="L-triangle2"></div>
+  <hr>
+  <!-- 气泡 -->
+  <div class="bubble">
+    <div class="bubble-triangle common"></div>
+    <div class="cover common"></div> <!-- 用来覆盖的倒三角 -->
+  </div>
 </body>
 
 

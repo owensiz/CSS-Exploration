@@ -1,8 +1,7 @@
 <!--
- * @Description: 使用box-shadow来实现多重边框
+ * @Description: 使用box-shadow来实现多重边框 + box-shado阴影介绍
  * @Author: owensiz
  * @Date: 2019-08-17 16:00:29
- * @LastEditTime: 2019-08-31 17:14:25
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +26,12 @@
       border-radius: 10px;
       box-shadow: 0 0 0 10px yellowgreen, 0 0 0 20px plum, 10px 10px 5px 20px rgba(0,0,0,0.7);
     }
+    .shine {
+      width: 100px;
+      height: 100px;
+      background-color: lightgray;
+      box-shadow: 0 0 10px 2px yellow;
+    }
   </style>
 </head>
 <body>
@@ -40,5 +45,7 @@
     “假边框”，在布局和点击事件之类的地方需要注意。   
   </div>
   <div class="content">测试文字 testText</div>
+  <!-- 将xy偏移值设为0，可以得到发光效果 -->
+  <div class="shine">用阴影制造发光效果</div>
 </body>
 </html>
