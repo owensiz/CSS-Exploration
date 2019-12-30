@@ -1,0 +1,38 @@
+<!--
+ * @Description: float 清除浮动
+ * @Refer: https://www.yuque.com/fe9/basic/ecdg1z#float
+ * @Author: owensiz
+ * @Date: 2019-10-17 22:13:02
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./explain.css">
+</head>
+
+<body>
+  <div class="explain">
+    float:
+    常用属性值有 left、right，即向左浮动和向右浮动。
+    直到碰到什么呢---设置了 float 的元素，会脱离文档流，然后向左或向右移动，直到碰到父容器的边界或者碰到另一个浮动元素。
+    文字环绕效果---块级元素会忽略 float 元素，文本和行内元素却会环绕它，所以 float 最开始是用来实现文字环绕效果的。
+
+
+    高度塌陷
+    当不给父元素设置宽高时，父元素的宽高会被子元素的内容撑开。
+    但是当子元素设置浮动属性后，子元素会溢出到父元素外，父元素的宽高也不会被撑开了，称之为“高度塌陷”，
+
+    清除浮动的几个方案
+    1. 通过添加额外的标签，利用 clear 属性来清除浮动
+    2. 用 br 标签。br 自带 clear 属性，clear 属性有 left、right 和 all 三个属性值可选。
+    3. 给父元素设置 overflow。BFC 的一个特性便是可以包含浮动元素，设置 overflow 为 hidden 满足了创建一个 BFC 的条件
+    4. 使用 after 伪元素。本质也是在末尾添加一个看不见的块元素来清除浮动。这个方法也不存在语义化的问题，是目前的主流清除浮动的方法。
+  </div>
+</body>
+
+</html>

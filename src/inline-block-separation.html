@@ -1,0 +1,126 @@
+<!--
+ * @Description: 两个inline-block行内元素之间的间隙
+ * @Refer: https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/
+ * @Author: owensiz
+ * @Date: 2019-10-17 21:30:59
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <section>
+    <!-- inline-block中间的间隙问题,inline也有这个问题 -->
+    <div class="foo">inline-block</div>
+    <div class="foo">inline-block</div>
+    <div class="foo">inline-block</div>
+    <style>
+      .foo {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </section>
+  <hr>
+  <section>
+    <!--  写成一行，直接不换行；或者用注释符号来连起来；缺点是非常脆弱，一格式化就变了-->
+    <div class="foo1">inline-block</div><div class="foo1">inline-block</div><!--
+    --><div class="foo1">inline-block</div>
+    <style>
+      .foo1 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </section>
+  <hr>
+  <section>
+    <!-- 使用负的margin值 -->
+    <div class="foo2">inline-block</div>
+    <div class="foo2">inline-block</div>
+    <div class="foo2">inline-block</div>
+    <style>
+      .foo2 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: -3px;
+      }
+    </style>
+  </section>
+  <hr>
+  <section class="section4">
+    <!-- 使用font-size:0 -->
+    <div class="foo4">inline-block</div>
+    <div class="foo4">inline-block</div>
+    <div class="foo4">inline-block</div>
+    <style>
+      .section4 {
+        font-size: 0;
+        /* 兼容chrome的最小字符限制 */
+        -webkit-text-size-adjust: none;
+      }
+
+      .foo4 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        font-size: 0;
+        -webkit-text-size-adjust: none;
+      }
+    </style>
+  </section>
+  <hr>
+  <section class="section5">
+    <!-- 使用letter-spacing-->
+    <div class="foo5">inline-block</div>
+    <div class="foo5">inline-block</div>
+    <div class="foo5">inline-block</div>
+    <style>
+      .section5 {
+        letter-spacing: -5px;
+      }
+
+      .foo5 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        letter-spacing: 0;
+      }
+    </style>
+  </section>
+  <hr>
+  <section class="section6">
+    <!-- 使用word-spacing-->
+    <div class="foo6">inline-block</div>
+    <div class="foo6">inline-block</div>
+    <div class="foo6">inline-block</div>
+    <style>
+      .section6 {
+        word-spacing: -6px;
+      }
+
+      .foo6 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </section>
+</body>
+
+</html>

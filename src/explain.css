@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.explain {
+  margin: 30px;
+  color: #666;
+  font-size: 14px;
+  line-height: 28px;
+  white-space: pre;
+}
+.blue {
+  background-color: lightblue;
+}
+.red {
+  background-color: lightpink;
+}
+.yellow {
+  background-color: lightyellow;
+}
+.grey {
+  background-color: lightslategrey;
+}
+.green {
+  background-color: lightseagreen;
+}

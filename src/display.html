@@ -1,0 +1,90 @@
+<!--
+ * @Description: display
+ * @Refer: https://www.yuque.com/fe9/basic/ecdg1z
+ * @Author: owensiz
+ * @Date: 2019-10-17 20:48:43
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./explain.css">
+</head>
+
+<body>
+  <div class="explain">
+    display：block、inline、inline-block、inherit、none、flex。
+    inherit 表示这个元素从父元素继承 display 属性值；
+    none 表示这个元素不显示，也不占用空间位置；
+    flex 表示flex 布局。
+    block 表示块级元素。
+    inline 表示行内元素。
+
+
+    块级元素和行内元素：
+    块级元素总是独占一行，从上到下显示，行内元素则是从左到右显示。
+    块级元素：
+    没有设置宽度时，它的宽度是其容器的 100%；
+    可以给块级元素设置宽高、内边距、外边距等盒模型属性；
+    块级元素可以包含块级元素和行内元素；
+    <!-- 常见的块级元素有：<div>、<h1> ~ <h6>、<p>、<ul>、<ol>、<dl>、<table>、<address>、<form> 等。 -->
+    行内元素：
+    行内元素不会独占一行，只会占领自身宽高所需要的空间；
+    给行内元素设置宽高不会起作用，margin 值只对左右起作用，padding 值也只对左右起作用；
+    行内元素一般不可以包含块级元素，只能包含行内元素和文本；
+    <!-- 常见的行内元素有 <a>、<b>、<label>、<span>、<img>、<em>、<strong>、<i>、<input> 等。 -->
+
+
+    可替代元素：
+    给 img 标签设置宽高是可以影响图片大小的
+    这是因为 img 是可替代元素，可替代元素具有内在的尺寸，所以宽高可以设定。
+    HTML 中的 input、button、textarea、select 都是可替代元素，这些元素即使是空的，浏览器也会根据其标签和属性来决定显示的内容。
+
+
+
+    设置为 inline-block 的元素，既具有块级元素可以设置宽高的特性，又具有行内元素不换行的特性。我们给 div 标签设置 inline-block 属性看下效果。
+  </div>
+  <section>
+    <!-- 给行内元素设置宽高不会起作用，margin 值只对左右起作用，padding 值也只对左右起作用； -->
+    <div class="box">div1</div>
+    <span class="item">span1</span>
+    <span class="item">span2</span>
+    <div class="box">div2</div>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: plum;
+      }
+
+      .item {
+        background-color: burlywood;
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </section>
+  <hr>
+  <section>
+    <!-- inline-block中间的间隙问题,inline也有这个问题 -->
+    <!-- 去除方式https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/ -->
+    <div class="foo">inline-block</div>
+    <div class="foo">inline-block</div>
+    <div class="foo">inline-block</div>
+    <div class="foo">inline-block</div>
+    <style>
+      .foo {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!--
+ * @Description: transition 过渡
+ * @Refer: https://juejin.im/post/5b137e6e51882513ac201dfb
+ * @Author: owensiz
+ -->
+
+<!-- 语法：transition: property duration timing-function delay; -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      background-color: #eee;
+      text-align: center;
+    }
+
+    .origin {
+      display: inline-block;
+      background-color: pink;
+      padding: 10px 0;
+      position: relative;
+      /* 看这一句，写在这里不行哦 */
+      /* transition: transform 3s ease; */
+    }
+
+    .origin::after {
+      content: '';
+      position: absolute;
+      left: 70px;
+      top: 20px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #333;
+      border-color: #333 #333 transparent transparent;
+      transform: rotate(-45deg);
+      transition: transform 3s ease;
+    }
+
+    .origin:hover::after {
+      content: '';
+      position: absolute;
+      left: 70px;
+      top: 20px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #333;
+      border-color: #333 #333 transparent transparent;
+      transform: rotate(135deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="origin">查看更多</div>
+  </div>
+</body>
+
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>transition</title>
+  <style>
+    #box {
+      height: 100px;
+      width: 100px;
+      background: green;
+      transition: transform 1s ease-in 1s;
+    }
+
+    #box:hover {
+      transform: rotate(180deg) scale(.5, .5);
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+</body>
+</html>
+ -->

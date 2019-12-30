@@ -1,0 +1,73 @@
+<!--
+ * @Description: line-height行高的探究
+ * @Refer: https://www.jianshu.com/p/03147d057c18
+ * @Author: owensiz
+ * @Date: 2019-10-19 14:29:36
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./explain.css">
+
+</head>
+
+<body style="font-size: 20px;">
+
+  <section>
+    <div class="red" style="line-height: normal;">
+      使用normal，大概值为1.2，视具体情况而定，行高会根据字号大小进行缩放
+      <h1>看看是不是呢</h1>
+    </div>
+  </section>
+  <section>
+    <div class="blue" style="line-height: 3;">
+      使用无单位数字，是font-size的倍数，行高会根据字号大小进行缩放，推荐！
+      <h1>看看是不是呢</h1>
+    </div>
+  </section>
+  <section>
+    <div class="green" style="line-height: 100%;">
+      使用百分比，不会适配字号，只是body字号的百分倍数，行高会根据具体字号大小进行缩放
+      <h1>看看是不是呢</h1>
+    </div>
+  </section>
+  <!-- 注意：
+    line-height
+    是可继承的。
+    既可用于块元素又可用于内联元素。
+
+    line-height 属性值：normal | [number] | [length] | [percentage] 
+    一个【无单位数字】：这个无单位数字【数字】乘以该元素的字体大小。计算值与指定值相同。大多数情况下，这是设置line-height的推荐方法，不会在继承时产生不确定的结果。
+    一个 【长度】：指定长度用于计算 line box 的高度。参考[长度]了解可使用的单位。以 em 为单位的值可能会产生不确定的结果（见下面的例子）。
+    一个 【百分比】：与元素自身的字体大小有关。计算值是给定的百分比值乘以元素计算出的字体大小。百分比值可能会带来不确定的结果（见下面第二个例子）。
+    关键词 normal。取决于用户端。桌面浏览器（包括Firefox）使用默认值，约为1.2，这取决于元素的 font-family。 
+  
+    与行高相关的几个box:
+    content-box -> inline-box -> line-box -> containing-box
+
+    每个单词（或者段落中的行内元素）就是一个 inline-box，更严格点来讲，没有标签包裹的纯文本元素也被成为匿名 inline-box。em b i之类的标签包裹的
+
+    一个 line-box 由一个或者多个 inline-box 构成
+
+    一个或多个 line-box 构成了一个 containing-box，每段文本都有一个 containing-box。可以这么理解：一个段落就是一个 containing-box。
+
+    每个 containing-box 是由一个或多个 line-box 构成的，因此可以说 line-box 的总高度决定了 containing-box 的高度，
+    而每个 line-box 是由一个或多个 inline-box 构成的，每个 line-box 的高度是由构成 line-box 的几个 inline-box 中的高度最大的那一个构成的，
+    因此：inline-box的高度，也就是行高 决定了一个段落也就是 containing-box 的高度。
+  
+    -- 
+
+    content-box 就是 inline-box 中文本所占的空间，其高度就是文本本身的高度，不包括文本自身高度以外的空白
+
+    content-box 的上下还有一些空白区域，这些区域就是所谓的半行间距，其值的计算方式为：（行高 - 字号）/ 2
+    其中，行高和字号的差也叫作行间距。
+  -->
+
+</body>
+
+</html>

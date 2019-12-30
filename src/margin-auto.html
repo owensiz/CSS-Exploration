@@ -1,5 +1,5 @@
 <!--
- * @Description: width: auto;和width: 100%;的区别
+ * @Description: 流 盒模型 width: auto;和width: 100%;的区别
  * @Author: owensiz
  * @Date: 2019-10-09 15:45:30
  -->
@@ -49,6 +49,11 @@
       width: 100%;
         此时子元素content width = 父元素content width;
         设置padding border margin时元素会溢出父盒子。
+
+      盒模型的注意点：
+        只要设置了合适的 DTD，大多数浏览器会按照标准盒模型来显示，但是 IE5.X 和 6 在怪异模式下会根据 IE 盒子模型进行显示。
+        标准盒模型下元素的 box-sizing 属性（IE8+）默认值为 content-box，将它设置成 border-box 可转换为 IE 盒模型。在实际应用场景中，若想控制元素总宽高保持固定，这个设置很有用。
+        元素的宽（width）、高（height）、边框（border）、内边距（padding）、外边距（margin）都是盒子模型的重要组成部分，但是盒子模型的大小只与元素的宽高、边框、内间距有关，外边距只影响盒子所占外围空间的大小。
     </section>
     <div class="item1">item1-width: auto; </div>
     <div class="item2">item2-width: 100%;</div>

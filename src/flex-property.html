@@ -1,0 +1,68 @@
+<!--
+ * @Description: 弹性布局中的某些属性，flex简写属性，flex-grow, flex-shrink, flex-basis
+ * @Refer: https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex
+ * @Author: owensiz
+ * @Date: 2019-10-18 10:53:56
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./explain.css">
+</head>
+<body>
+  <article class="explain">
+    flex是item项目属性，是一个简写属性。用来设置 flex-grow, flex-shrink 与 flex-basis。
+
+    flex属性可以指定为1 2 3 个值。
+
+      单值语法: 值必须为以下其中之一:
+        一个无单位数(<number>): 它会被当作<flex-grow>的值。
+        一个有效的宽度(width)值: 它会被当作 <flex-basis>的值。
+        关键字none，auto或initial.
+            initial
+            在需要的时候可以收缩，但不能拉伸
+            元素会根据自身宽高设置尺寸。它会缩短自身以适应 flex 容器，但不会伸长并吸收 flex 容器中的额外自由空间来适应 flex 容器 。相当于将属性设置为"flex: 0 1 auto"。
+            auto
+            在需要的时候可以拉伸也可以收缩
+            元素会根据自身的宽度与高度来确定尺寸，但是会伸长并吸收 flex 容器中额外的自由空间，也会缩短自身来适应 flex 容器。这相当于将属性设置为 "flex: 1 1 auto".
+            none
+            既不能拉伸也不能收缩。
+            元素会根据自身宽高来设置尺寸。它是完全非弹性的：既不会缩短，也不会伸长来适应 flex 容器。相当于将属性设置为"flex: 0 0 auto"。
+
+
+      双值语法: 第一个值必须为一个无单位数，并且它会被当作 <flex-grow> 的值。第二个值必须为以下之一：
+        一个无单位数：它会被当作 <flex-shrink> 的值。
+        一个有效的宽度值: 它会被当作 <flex-basis> 的值。
+
+          
+      三值语法:
+        第一个值必须为一个无单位数，并且它会被当作 <flex-grow> 的值。
+        第二个值必须为一个无单位数，并且它会被当作  <flex-shrink> 的值。
+        第三个值必须为一个有效的宽度值， 并且它会被当作 <flex-basis> 的值。        
+  </article>
+  <hr>
+  <article class="explain">
+    flex-grow：子容器剩余空间的分配比例。注意是剩余空间啊。
+      值：number; 默认为0，即如果存在剩余空间，也不放大。
+
+
+
+
+    flex-shrink：子容器超出空间的压缩比例。
+      此属性要生效，父容器的 flex-wrap 属性要设置为 nowrap
+
+
+    flex-basis 属性
+      定义了子容器在不伸缩情况下的原始尺寸，主轴为横向时代表宽度，主轴为纵向时代表高度。
+      flex-basis: <length> | auto; /* default auto */
+
+  </article>
+  <section>
+    <!-- flex-grow -->
+  </section>
+</body>
+</html>
