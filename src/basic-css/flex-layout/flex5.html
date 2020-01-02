@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>flex布局-六项目</title>
+</head>
+<body>
+	<style type="text/css">
+		.box {
+			background: pink;
+			width: 90px;
+			height: 90px;
+			border-radius: 15px;
+		}
+		.item{
+			background: blue;
+			width: 30px;
+			height: 30px;
+			border-radius: 15px;
+		}
+
+		/*css1*/
+		/*.box {
+			display: flex;
+			flex-wrap: wrap;
+			align-content: space-between;
+		}*/
+
+
+		/*css2*/
+		/*这个东西还蛮灵的，*/
+		/*噢噢噢，因为要设置主轴的方向，所以不能取名为横轴*/
+		.box {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-content: space-between;
+		}
+
+
+
+		
+	</style>
+	<div class="box">
+		<span class="item"></span>
+		<span class="item"></span>
+		<span class="item"></span>
+		<span class="item"></span>
+		<span class="item"></span>
+		<span class="item"></span>
+	</div>
+</body>
+</html>

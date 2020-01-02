@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+    .bg{
+      width: 300px;
+      height: 600px;
+      padding: 10px;
+      border: 10px solid plum;
+      background: #000 url('../../../static/荷包蛋.png') no-repeat center center content-box;
+      background-size: contain;
+      box-sizing: content-box;
+    }
+
+  </style>
+  <div class="explain">
+    background: bg-color  bg-img bg-repeat bg-attachment bg-position/bg-size bg-origin bg-clip
+    <br>
+    不设置的可以省略，注意 bg-position/bg-size 不可同时写。
+    <br>
+    FOCUS: 如果背景图像background-attachment是"固定"，background-origin属性没有任何效果。
+  </div>
+  <div class="bg">
+  </div>
+</body>
+</html>

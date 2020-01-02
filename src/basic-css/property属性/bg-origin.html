@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .bg{
+      width:100px;
+      height: 200px;
+      /* background-color: #777; */
+      background-image: url('../../../static/荷包蛋.png');
+      margin-bottom: 30px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      padding: 20px;
+      border: 10px dotted plum;
+    }
+    .content-box{
+      background-origin: content-box;
+    }
+    .padding-box{
+      background-origin: padding-box;
+    }
+    .border-box{
+      background-origin: border-box;
+    }
+
+  </style>
+  <div class="bg content-box"></div>
+  <div class="bg padding-box"></div>
+  <div class="bg border-box"></div>
+</body>
+</html>

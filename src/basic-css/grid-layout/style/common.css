@@ -1,0 +1,15 @@
+.explain{
+  margin: 30px;
+  color: #666;
+  font-size: 14px;
+  line-height: 28px;
+}
+.parent{
+  width: 500px;
+  height: 200px;
+  border: 1px solid green;
+  background: #eee;
+}
+.child{
+  border: 1px solid plum;
+}

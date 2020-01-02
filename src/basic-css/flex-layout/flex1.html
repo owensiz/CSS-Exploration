@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- title乱码的原因是因为没设置 charset,注意到，这个设置要在title之前 -->
+	<title>flex布局-双项目</title>
+</head>
+<body>
+	<style type="text/css">
+		.box {
+			background: pink;
+			width: 90px;
+			height: 90px;
+			border-radius: 15px;
+		}
+		.item{
+			background: blue;
+			width: 30px;
+			height: 30px;
+			border-radius: 15px;
+		}
+
+		/*css 1*/
+		/*.box {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-end;
+		}*/
+
+
+		/*css 2*/
+		.box{
+			display: flex;
+			justify-content: space-between;
+		}
+		.item:nth-child(2) {
+			/*align-items: */
+			align-self: flex-end;
+			background: yellow;
+			/*align-self 可以用来覆盖 align-items */
+		}
+	</style>
+	<div class="box">
+		<span class="item"></span>
+		<span class="item"></span>
+	</div>
+</body>
+</html>

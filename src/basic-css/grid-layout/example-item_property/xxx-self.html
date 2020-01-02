@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+    .parent {
+      height: 300px;
+      width: 300px;
+      border: 1px solid green;
+      background: #eee;
+    }
+
+    .child {
+      border: 1px solid plum;
+      background: rgba(0, 0, 0, 0.01);
+    }
+
+    .parent {
+      display: grid;
+      grid-template: repeat(3, 100px)/repeat(3, 100px);
+      grid-auto-flow: row dense;
+    }
+
+    .child1 {
+      justify-self: end;
+      align-self: stretch;
+    }
+
+    .child2 {
+      place-self: center stretch;
+    }
+
+    .child9 {
+      place-self: center;
+    }
+  </style>
+  <div class="explain">
+    xxx-self: justify-self, align-self, place-self
+    <br>
+    类比xxx-items,只不过是作用于单个项目。属性完全相同，4个，start, center, end, stretch
+    <br>
+    place-self: align-self justify-self 缩写形式：垂直水平的顺序
+    <br>
+    place-self若只写一个值，会默认两个值相等。
+    <br>
+  </div>
+  <div class="parent">
+    <div class="child child1">1</div>
+    <div class="child child2">2</div>
+    <div class="child">3</div>
+    <div class="child ">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+    <div class="child">7</div>
+    <div class="child">8</div>
+    <div class="child child9">9</div>
+  </div>
+</body>
+
+</html>

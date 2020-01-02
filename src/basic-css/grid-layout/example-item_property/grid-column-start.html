@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+    .parent {
+      height: 300px;
+      width: 300px;
+      border: 1px solid green;
+      background: #eee;
+    }
+
+    .child {
+      border: 1px solid plum;
+      background: rgba(0, 0, 0, 0.01);
+    }
+
+    .parent {
+      display: grid;
+      grid-template: repeat(3, 100px)/repeat(3, 100px);
+    }
+
+    .child1{
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 4;
+    }
+    .child2{
+      /* grid-column-start: span 2; */
+      /* 和下面一句等效 */
+      grid-column-end: span 2;
+    }
+  </style>
+  <div class="explain">
+    item的4个边框：grid-column-start, grid-column-end, grid-row-start, grid-row-end
+    <br>
+    使用1: 指定是第几个网格线。从1开始数，而不是0。没有被指定的item由浏览器自动布局。grid-auto-flow属性来指定，默认是row。
+    <br>
+    使用2: 指定网格线的名字。例子见grid-line-name.html & grid-template-area.html 
+    <br>
+    使用3: 使用span(跨越);注意这里的两种写法等效。grid-column-start: span 2;grid-column-end: span 2;
+    <br>
+    FOCUS：使用上述属性，如果产生了项目的重叠-使用z-index
+  </div>
+  <div class="parent">
+    <div class="child child1">1</div>
+    <div class="child child2">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+    <div class="child">7</div>
+    <div class="child">8</div>
+    <div class="child">9</div>
+  </div>
+</body>
+</html>

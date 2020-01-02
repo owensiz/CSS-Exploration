@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../style/common.css">
+</head>
+
+<body>
+  <style>
+    .parent {
+      width: 400px;
+      height: 400px;
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px;
+      grid-template-areas: 'header header header'
+        'main main sidebar'
+        '. footer .'
+    }
+    .header{
+      grid-column-start: header-start; 
+      grid-column-end: header-end; 
+    }
+    .main{
+      grid-column-start: main-start;
+      grid-column-end: main-end;
+    }
+    .sidebar{
+      grid-column-start: sidebar-start;
+      grid-column-end: sidebar-end;
+    }
+    .footer{
+      grid-column-start: footer-start;
+      grid-column-end: footer-end;
+    }
+  </style>
+  <div class="explain">
+    区域-允许指定区域-使用grid-template-areas属性
+    <br>
+    多个单元格合并的写法-使用同名
+    <br>
+    省略某些不需要的单元格的方法-使用点.
+    <br>
+    区域的命名会影响网格线命名。起止位置的垂直和水平网格线叫做xxx-start，xxx-end。
+  </div>
+  <div class="parent">
+    <div class="child header">header</div>
+    <div class="child main">main</div>
+    <div class="child sidebar">sidebar</div>
+    <div class="child footer">footer</div>
+  </div>
+</body>
+
+</html>

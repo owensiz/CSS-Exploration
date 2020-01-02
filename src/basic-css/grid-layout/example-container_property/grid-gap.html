@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../style/common.css">
+</head>
+
+<body>
+  <style>
+    .parent {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+
+      /* grid-column-gap: 10px;
+      grid-row-gap: 10px; */
+
+      /* grid-gap: 20px 10px; */
+
+      grid-gap: 30px;
+    }
+  </style>
+  <div class="explain">
+      grid-gap上述两个属性的简写，顺序是row column，若省略一个，默认两个值相同。 
+  </div>
+  <div class="parent">
+    <div class="child">1</div>
+    <div class="child">1</div>
+    <div class="child">1</div>
+    <div class="child">1</div>
+    <div class="child">1</div>
+    <div class="child">1</div>
+    <div class="child">1</div>
+    <div class="child">1</div>
+    <div class="child">1</div>
+  </div>
+</body>
+
+</html>

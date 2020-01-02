@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+    .parent {
+      height: 300px;
+      width: 300px;
+      border: 1px solid green;
+      background: #eee;
+    }
+
+    .child {
+      border: 1px solid plum;
+      background: rgba(0, 0, 0, 0.01);
+    }
+
+    .parent {
+      display: grid;
+      grid-template: repeat(3, 100px)/repeat(3, 100px);
+      grid-auto-columns: 50px;
+      grid-auto-rows: 50px;
+    }
+
+    .child8 {
+      grid-row-start: 4;
+      grid-column-start: 2;
+    }
+
+    .child9 {
+      grid-row-start: 5;
+      grid-column-start: 4;
+    }
+  </style>
+  <div class="explain">
+    若一些item在现有网格的外部，浏览器将按照它的内容大小自动创建网格。
+    <br>
+    可以使用grid-auto-rows grid auto-columns 来规定这种额外网格的大小
+    <br>
+    使用方式同grid-template-rows
+    <br>
+    啊。这个东西好像不能滥用。会影响原来的布局。
+    <br>
+  </div>
+  <div class="parent">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+    <div class="child">7</div>
+    <div class="child child8">8</div>
+    <div class="child child9">9</div>
+  </div>
+</body>
+
+</html>

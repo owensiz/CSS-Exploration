@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style lang="">
+    .parent {
+      width: 200px;
+      height: 150px;
+      background: #000;
+      display: flex;
+
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      align-content: flex-start;
+      /* 多个轴线对齐方式 */
+      
+    }
+    .child {
+      box-sizing: border-box;
+      border: 1px solid red;
+      background: #fff;
+      height: 50px;
+      flex-basis: 25%;
+    }
+  </style>
+
+  <div class="parent">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+</body>
+</html>

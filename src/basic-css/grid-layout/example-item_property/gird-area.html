@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+    .parent {
+      height: 300px;
+      width: 300px;
+      border: 1px solid green;
+      background: #eee;
+    }
+
+    .child {
+      border: 1px solid plum;
+      background: rgba(0, 0, 0, 0.01);
+    }
+
+    .parent {
+      display: grid;
+      grid-template: repeat(3, 100px)/repeat(3, 100px);
+      grid-template-areas: 'header header header'
+      'a b c'
+      'footer footer footer'
+    }
+    .child1{
+      grid-area: header;
+    }
+    .child2{
+      grid-area: 2/3/2/3;
+    }
+ 
+  </style>
+  <div class="explain">
+    grid-area（指定项目放在哪个区域）
+    <br>
+    使用1: 和grid-template-areas连用？
+    <br>
+    使用2: 作为grid-row-start, grid-column-start, grid-row-end, grid-column-end的缩写。用斜杠/隔开。
+    <br>
+    行头/列头/行尾/列尾
+    <br>
+  </div>
+  <div class="parent">
+    <div class="child child1">1</div>
+    <div class="child child2">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+    <div class="child">7</div>
+    <div class="child">8</div>
+    <div class="child">9</div>
+  </div>
+</body>
+</html>

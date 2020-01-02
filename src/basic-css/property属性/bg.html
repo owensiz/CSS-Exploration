@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .bg {
+      height: 100px;
+      width: 300px;
+      background-color: #ff0;
+      background: url('../../../static/荷包蛋.png') center center no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+  </style>
+  <div class="wrapper">
+    <div class="explain">常用bg</div>
+    <div class="bg"></div>
+    <div class="explain">
+      bg属性
+      <br>
+      以下bg均为background, inherit属性未列出
+      <br>
+      bg-color: #000 red rgba(0,0,0,0.2) transparent
+      <br>
+      bg-position(用于设置背景图像的位置，如果要重复，从这一点开始重复): 默认值为0% 0%
+      <br>
+      bg-position: top/left/bottom/center top/left/bottom/center
+      <br>
+      bg-position: x% y%
+      <br>
+      bg-size:length(两个值，宽高) percentage(两个值，宽高) cover(覆盖) contain
+      <br>
+      bg-repeat: repeat no-repeat repeat-x repeat-y
+      <br>
+      bg-origin(用于设置背景图片的定位规则bg-position): content-box padding-box border-box
+      <br>
+      bg-clip(用于设置背景的绘制区域): content-box padding-box border-box
+      <br>
+      bg-attachment(背景图片是固定还是随其他部分滚动): scroll fixed
+      <br>
+      bg-image: url('./xxx') none
+    </div>
+  </div>
+</body>
+
+</html>

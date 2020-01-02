@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .bg {
+      width: 100px;
+      height: 200px;
+      background-color: plum;
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 10px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .content-box {
+      background-clip: content-box;
+    }
+
+    .padding-box {
+      background-clip: padding-box;
+    }
+
+    .border-box {
+      background-clip: border-box;
+    }
+
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+  </style>
+  <div class="explain">
+    用bg-clip来决定背景的渲染方式。
+    <br>
+    下例实现透明边框，就要使得bg不从border开始绘制。默认的bg-clip是border-box。
+  </div>
+  <div class="bg content-box">content-box</div>
+  <div class="bg padding-box">padding-box</div>
+  <div class="bg border-box">border-box</div>
+</body>
+
+</html>

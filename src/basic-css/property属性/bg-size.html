@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .bg{
+      width:100px;
+      height: 200px;
+      background-color: #777;
+      background-image: url('../../../static/荷包蛋.png');
+      margin-bottom: 30px;
+      background-repeat: no-repeat;
+    }
+
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+    .contain{
+      background-size: contain;
+    }
+    .cover{
+      background-size: cover;
+    }
+
+    .value{
+      background-size: 50px 50px;
+    }
+
+    .percentage{
+      background-size: 100% 90%;
+    }
+  </style>
+  <div class="explain">
+      cover:保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小。完全覆盖，可能有图片显示不完整的情况。
+      <br>
+      contain:保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小。可能有空白区域
+  </div>
+  <div class="bg contain"></div>
+  <div class="bg cover"></div>
+  <div class="bg value"></div>
+  <div class="bg percentage"></div>
+</body>
+</html>

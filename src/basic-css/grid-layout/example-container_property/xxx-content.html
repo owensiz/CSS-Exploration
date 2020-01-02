@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+    .parent {
+      height: 500px;
+      width: 500px;
+      border: 1px solid green;
+      background: #eee;
+    }
+
+    .child {
+      border: 1px solid plum;
+      background: rgba(0,0,0,0.01);
+    }
+
+    .parent {
+      display: grid;
+      grid-template: repeat(3, 100px)/repeat(3, 100px);
+      /* align-content: space-evenly;
+      justify-content: center; */
+      place-content: end end;
+    }
+   
+  </style>
+  <div class="explain">
+    与xxx-items不同（单元格内容在单元格中的排列）。xxx-content是-整个内容区域在容器中的水平位置。
+    <br>
+    justify-content, align-content。类比text-align 和vertical-align。
+    <br>
+    可设置的值有7个。除了start, center, end, stretch。还有space-around, space-between, space-evenly.
+    <br>
+    space-around, space-evenly的区别是：前者两边的距离是item彼此之间距离的一半，后者等距。
+    <br>
+    place-content是上述两属性的简写。顺序是align justify。先垂直，后水平。
+    <br>
+    FOCUS: stretch的前提是：item大小没有指定时，拉伸占据整个网格容器。
+  </div>
+  <div class="parent">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+    <div class="child">7</div>
+    <div class="child">8</div>
+    <div class="child">9</div>
+  </div>
+</body>
+
+</html>

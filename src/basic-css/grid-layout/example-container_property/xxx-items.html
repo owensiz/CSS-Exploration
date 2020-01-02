@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .explain {
+      margin: 30px;
+      color: #666;
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+    .parent {
+      height: 300px;
+      width: 300px;
+      border: 1px solid green;
+      background: #eee;
+    }
+
+    .child {
+      border: 1px solid plum;
+      background: rgba(0,0,0,0.01);
+    }
+
+    .parent {
+      display: grid;
+      grid-template: repeat(3, 100px)/repeat(3, 100px);
+      /* justify-items: stretch;
+      align-items: stretch; */
+      place-items: start end;
+    }
+
+   
+  </style>
+  <div class="explain">
+    与其他容器属性不同。不涉及单元格的排列。用于单元格中内容的排列。
+    <br>
+    justify-items, align-items。类比text-align 和vertical-align。
+    
+    <br>
+    可设置的值有4个。start, center, end, stretch。
+    <br>
+    place-items是上述两属性的简写。顺序是align justify。先垂直，后水平。
+    <br>
+  </div>
+  <div class="parent">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+    <div class="child">7</div>
+    <div class="child">8</div>
+    <div class="child">9</div>
+  </div>
+</body>
+
+</html>

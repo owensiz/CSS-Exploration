@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>圣杯布局Holy Grail Layout</title>
+  <!-- 页面从上到下，分成三个部分：头部（header），躯干（body），尾部（footer）。
+  其中躯干又水平分成三栏，从左到右为：导航、主栏、副栏。 -->
+</head>
+<body>
+  <style>
+    .holy {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      /* vh viewport height */
+      /* vw viewport width */
+    }
+
+    header,footer,article{
+      flex-basis: 100%;
+    }
+
+  article{
+    display: flex
+  }
+    nav {
+      order: -1;
+    }
+
+    nav,aside {
+      flex: 0 0 12em;
+    }
+
+    main {
+      flex: 1;
+    }
+  </style>
+  <div class="holy">
+    <header style="background: darkolivegreen;">头部</header>
+    <article class="body">
+      <main style="background: red;">主栏</main>
+      <nav style="background: pink;">导航</nav>
+      <aside style="background: yellow;">副栏</aside>
+    </article>
+    <footer style="background: darkorchid;">尾部</footer>
+  </div>
+</body>
+</html>

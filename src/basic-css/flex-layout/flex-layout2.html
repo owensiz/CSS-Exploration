@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>百分比布局</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <style lang="">
+      .grid {
+        background: #000;
+        width: 100%;
+        height: 100px;
+      }
+      .grid-cell {
+        background: #999;
+        margin: 10px;
+        width: 10px;
+        height: 10px;
+      }
+
+      .grid {
+        display: flex;
+        /* justify-content: flex-start; */
+        flex-direction: row-reverse
+      }
+
+      .grid-cell {
+        flex: 1
+      }
+
+      .grid-cell.u-lof3 {
+        flex: 0 0 30%;
+      }
+    </style>
+    <div class="grid">
+      <span class="grid-cell u-lof3"></span>
+      <span class="grid-cell"></span>
+      <span class="grid-cell"></span>
+      <span class="grid-cell"></span>
+      <span class="grid-cell"></span>
+      <span class="grid-cell"></span>
+      <span class="grid-cell"></span>    
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .name {
+            height: 100px;
+            width: 300px;
+            border: 1px solid #000;
+            background: #dddddd;
+            margin-bottom: 300px;
+        }
+        
+        .rotate-s {
+            transform: rotate(-30deg)
+        }
+        
+        .rotate-s2 {
+            transform: rotate(30deg)
+        }
+        
+        .translate-s {
+            transform: translate(30%, 100px)
+        }
+        
+        .scale-s {
+            transform: scale(2, 3)
+        }
+    </style>
+    <p style="margin-bottom: 300px;">
+        rotate()围绕一个定点（由transform-origin属性指定）旋转默认为元素的中心，但你可以使用transform-origin属性设置自己的自定义变换原点。
+    </p>
+    <div class="name rotate-s">
+        transform: rotate(-30deg)
+    </div>
+    <div class="name rotate-s2">
+        transform: rotate(30deg)
+    </div>
+    <div class="name translate-s">
+        transform: translate(30%, 100px)
+    </div>
+    <div class="name scale-s">
+        transform: scale(2, 3)
+    </div>
+</body>
+
+</html>

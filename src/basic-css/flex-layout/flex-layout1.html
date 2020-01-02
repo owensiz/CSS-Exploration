@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <style>
+    .grid {
+      background: #000;
+    }
+    .grid-cell{
+      background: #999;
+      margin: 10px
+    }
+    .grid {
+      display: flex;
+    }
+    .grid-cell {
+      flex: 1;
+      /* 或者随便啥数字 */
+      /* 等分 */
+      /* flex是flex-grow,flex-shrink,flex-basis三者的合写,他的默认值为0 1 auto，类似于 border: 1px solid #000; */
+      flex-basis: 100%;
+    }
+    
+  </style>
+  <div class="grid">
+    <div class="grid-cell">1/n</div>
+    <div class="grid-cell">1/n</div>
+    <div class="grid-cell">1/n</div>
+    <div class="grid-cell">1/n</div>
+    <div class="grid-cell">1/n</div>
+    <div class="grid-cell">1/n</div>
+  </div>
+</body>
+</html>
