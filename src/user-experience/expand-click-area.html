@@ -1,0 +1,44 @@
+<!--
+ * @Description: 用户体验 - 扩大可点击区域
+ * @Refer: 伪元素可以代表宿主元素来响应点击事件
+ * @Author: owensiz
+ * @Date: 2020-01-02 19:30:08
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .arrow {
+      position: relative;
+      left: 30px;
+      top: 30px;
+      width: 10px;
+      height: 10px;
+      border-left: 1px solid #333;
+      border-top: 1px solid #333;
+      transform: rotate(-45deg);
+    }
+    .arrow::after {
+      /* 在按钮的上层覆盖一层透明的伪元素，并让伪元素在四个方向 上都比宿主元素大出 10px: */
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="arrow" onclick="handleClick()"></div>
+  <script>
+    function handleClick (){
+      console.log(1234)
+    }
+  </script>
+</body>
+</html>
